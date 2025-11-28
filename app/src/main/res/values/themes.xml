@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.Tuner" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="Theme.Tuner.Splash" parent="Theme.Tuner">
+        <item name="android:windowBackground">@color/splash_bg_color</item>
+        <item name="android:statusBarColor">@color/splash_bg_color</item>
+    </style>
+</resources>

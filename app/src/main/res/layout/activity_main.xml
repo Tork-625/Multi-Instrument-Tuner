@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".core.MainActivity">
+
+    <!-- Background render panel -->
+    <com.vd.tuner.ui.views.TunerView
+        android:id="@+id/TunerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/directional_lit_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pitchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="0.00 Hz"
+        android:textSize="35sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:maxLines="3"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeMaxTextSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTopBarBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!---
+        <View
+            android:id="@+id/top_strip"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:background="#00000000"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/bottom_Strip"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:background="#00000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+             -->
+
+    <!-- Left Vertical Progress Bar -->
+    <ProgressBar
+        android:id="@+id/tuningProgressBarLeft"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        android:background="#00DC0000"
+        android:max="100"
+        android:progress="0"
+        android:progressBackgroundTint="#00000000"
+        android:progressDrawable="@drawable/vertical_progress_bar_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:progressTint="@null"
+        android:secondaryProgressTint="@null"
+        android:indeterminateTint="@null"/>
+
+
+    <!-- Right Vertical Progress Bar -->
+    <ProgressBar
+        android:id="@+id/tuningProgressBarRight"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        android:background="#00FF0505"
+        android:max="100"
+        android:progress="0"
+        android:progressBackgroundTint="#00000000"
+        android:progressDrawable="@drawable/vertical_progress_bar_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:progressTint="@null"
+        android:secondaryProgressTint="@null"
+        android:indeterminateTint="@null"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/autoIsBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <Spinner
+        android:id="@+id/instrument_spinner"
+        style="@style/SpinnerPopup"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:button="@null"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:background="@drawable/instrument_button_style"
+        android:drawablePadding="8dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/autoIsBottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/frequencyIsBottom"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/frequencyIsBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTopBarBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.23" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBarContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/autoIsBottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Spinner at top -->
+        <Spinner
+            android:id="@+id/tuningSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/spinner_bg"
+            android:textAlignment="center"
+            android:spinnerMode="dropdown"
+            android:popupBackground="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Auto mode button below spinner -->
+    <ToggleButton
+        android:id="@+id/automode"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/circular_button_background"
+        android:gravity="center"
+        android:text="Auto"
+        android:textOn="Auto"
+        android:textOff="Auto"
+        android:textColor="@color/auto_button_text_color"
+        android:singleLine="true"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/frequencyIsBottom"
+        app:layout_constraintTop_toTopOf="@id/autoIsBottom"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+
+
+    <!-- Meter Section (top 45%) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/meterContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintDimensionRatio="1133:391"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTopBarBottom">
+
+        <ImageView
+            android:id="@+id/meter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/meter" />
+
+        <ImageView
+            android:id="@+id/needle"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/needle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!-- New container that holds headstock + buttons -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/instrument_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/blur_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#56000000"
+        android:alpha="0"
+        android:visibility="gone"
+        android:elevation="20dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

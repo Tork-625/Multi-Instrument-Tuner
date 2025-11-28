@@ -1,0 +1,41 @@
+<resources>
+    <style name="Theme.Tuner.Splash" parent="Theme.Tuner">
+        <item name="android:windowSplashScreenBackground">@color/splash_bg_color</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/splash_bg_color</item>
+        <item name="android:statusBarColor">@color/splash_bg_color</item>
+    </style>
+
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+        <style name="InstrumentDialogTheme" parent="Theme.AppCompat.Dialog">
+            <item name="android:windowBackground">@android:color/transparent</item>
+            <item name="android:windowNoTitle">true</item>
+            <item name="android:windowIsFloating">true</item>
+            <item name="android:backgroundDimEnabled">true</item>
+            <item name="android:backgroundDimAmount">0.7</item>
+        </style>
+
+        <style name="InstrumentItemText">
+            <item name="android:textSize">16sp</item>
+            <item name="android:textColor">@color/instrument_item_text_color</item>
+            <item name="android:fontFamily">sans-serif</item>
+            <item name="android:textStyle">bold</item>
+        </style>
+
+    <style name="SpinnerPopup" parent="Widget.AppCompat.Spinner">
+        <item name="android:popupBackground">#262626</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:dropDownWidth">match_parent</item>
+        <item name="android:popupElevation">6dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+
+</resources>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="#47413D"
+    android:padding="1dp">
+
+<LinearLayout
+android:orientation="vertical"
+android:padding="24dp"
+android:background="#040404"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:elevation="16dp">
+
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:gravity="center"
+android:layout_marginBottom="24dp">
+
+<!-- Music note icon -->
+<ImageView
+    android:id="@+id/music_icon"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginEnd="12dp"
+    android:contentDescription="Music note icon"
+    android:src="@drawable/music_note"
+    app:tint="#E05930" />
+
+<TextView
+    android:id="@+id/dialog_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Select Tuning"
+    android:textSize="26sp"
+    android:textStyle="bold"
+    android:textColor="#8BC34A"
+    android:gravity="center_vertical" />
+</LinearLayout>
+
+    <!-- Divider -->
+<View
+android:layout_width="match_parent"
+android:layout_height="2dp"
+android:background="#FFFFFF"
+android:layout_marginBottom="20dp" />
+
+    <!-- List of tunings -->
+<ListView
+android:id="@+id/tuning_list"
+android:divider="#040404"
+android:dividerHeight="10dp"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:scrollbars="none" />
+    </LinearLayout>
+    </FrameLayout>

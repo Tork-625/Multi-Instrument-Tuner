@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <set>
+            <objectAnimator
+                android:propertyName="translationZ"
+                android:duration="100"
+                android:valueTo="1"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:duration="100"
+                android:valueTo="0.96"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            <objectAnimator
+                android:propertyName="scaleY"
+                android:duration="100"
+                android:valueTo="0.96"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </set>
+    </item>
+
+    <item android:state_focused="true">
+        <set>
+            <objectAnimator
+                android:propertyName="translationZ"
+                android:duration="150"
+                android:valueTo="2"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:duration="150"
+                android:valueTo="0.98"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            <objectAnimator
+                android:propertyName="scaleY"
+                android:duration="150"
+                android:valueTo="0.98"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </set>
+    </item>
+
+    <item>
+        <set>
+            <objectAnimator
+                android:propertyName="translationZ"
+                android:duration="150"
+                android:valueTo="3.0"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:duration="150"
+                android:valueTo="1.0"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            <objectAnimator
+                android:propertyName="scaleY"
+                android:duration="150"
+                android:valueTo="1.0"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </set>
+    </item>
+</selector>

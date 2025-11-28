@@ -1,0 +1,31 @@
+# IDE settings
+.idea/
+
+# Build system folders
+.gradle/
+build/
+.kotlin/
+app/build/
+captures/
+.externalNativeBuild/
+
+# Local configuration
+local
+local.properties
+
+# Android and Java specific
+*.apk
+*.aab
+*.so
+*.log
+*.jar
+
+# Security
+*.keystore
+
+# Temporary and OS Files
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
